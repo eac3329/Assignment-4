@@ -42,6 +42,17 @@
 
 
     <div id="jobs-list" class="flex-grow divide-y divide-slate-100"></div>
+    
+    <div class="flex gap-3">
+    <button onclick="setStatus(${job.id}, 'Interview')" 
+        class="px-5 py-1.5 rounded text-[11px] font-bold transition-colors ${job.status === 'Interview' ? 'bg-green-600 text-white' : 'btn-green-outline'}">
+        INTERVIEW
+    </button>
+    <button onclick="setStatus(${job.id}, 'Rejected')" 
+        class="px-5 py-1.5 rounded text-[11px] font-bold transition-colors ${job.status === 'Rejected' ? 'bg-red-600 text-white' : 'btn-red-outline'}">
+        REJECTED
+    </button>
+</div>
 </div>
 </div>
 </body>
