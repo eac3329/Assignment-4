@@ -9,51 +9,49 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-[#F8FAFC] font-['Inter'] p-4 md:p-10">
-    <div id="app" class="max-w-5xl mx-auto">
+
+    <div class="max-w-5xl mx-auto">
         <h1 class="text-2xl font-bold text-[#1E3A8A] mb-8">Job Application Tracker</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm">
+                <p class="text-slate-500 font-medium mb-2">Total</p>
+                <h2 id="total-count" class="text-4xl font-bold text-[#1E3A8A]">0</h2>
+            </div>
+            <div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm">
+                <p class="text-green-600 font-medium mb-2">Interview</p>
+                <h2 id="interview-count" class="text-4xl font-bold text-green-600">0</h2>
+            </div>
+            <div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm">
+                <p class="text-red-500 font-medium mb-2">Rejected</p>
+                <h2 id="rejected-count" class="text-4xl font-bold text-red-500">0</h2>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col min-h-[600px]">
+            
+            <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-white">
+                <h3 class="text-lg font-bold text-[#1E3A8A]">Available Jobs</h3>
+                <span id="tab-job-count" class="text-slate-400 text-sm font-medium">0 jobs</span>
+            </div>
+
+            <div class="px-6 py-4 flex gap-2 border-b border-slate-50 bg-slate-50/30">
+                <button onclick="handleFilterChange('All')" class="tab-btn active">All</button>
+                <button onclick="handleFilterChange('Interview')" class="tab-btn">Interview</button>
+                <button onclick="handleFilterChange('Rejected')" class="tab-btn">Rejected</button>
+            </div>
+
+            <div id="jobs-list" class="flex-grow divide-y divide-slate-100">
+                </div>
+
+            <div class="p-4 bg-white border-t border-slate-100 flex gap-2">
+                <button onclick="handleFilterChange('All')" class="tab-btn active">All</button>
+                <button onclick="handleFilterChange('Interview')" class="tab-btn">Interview</button>
+                <button onclick="handleFilterChange('Rejected')" class="tab-btn">Rejected</button>
+            </div>
+        </div>
     </div>
+
     <script src="script.js"></script>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-    <div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm">
-        <p class="text-slate-500 font-medium mb-2">Total</p>
-        <h2 id="total-count" class="text-4xl font-bold text-[#1E3A8A]">0</h2>
-    </div>
-    <div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm">
-        <p class="text-green-600 font-medium mb-2">Interview</p>
-        <h2 id="interview-count" class="text-4xl font-bold text-green-600">0</h2>
-    </div>
-    <div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm">
-        <p class="text-red-500 font-medium mb-2">Rejected</p>
-        <h2 id="rejected-count" class="text-4xl font-bold text-red-500">0</h2>
-    </div>
-
-    <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col min-h-[600px]">
-    <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-white">
-        <h3 class="text-lg font-bold text-[#1E3A8A]">Available Jobs</h3>
-        <span id="tab-job-count" class="text-slate-400 text-sm font-medium">0 jobs</span>
-    </div>
-
-    <div class="px-6 py-4 flex gap-2 border-b border-slate-50 bg-slate-50/30">
-    <button onclick="handleFilterChange('All')" class="tab-btn active">All</button>
-    <button onclick="handleFilterChange('Interview')" class="tab-btn">Interview</button>
-    <button onclick="handleFilterChange('Rejected')" class="tab-btn">Rejected</button>
-</div>
-
-
-    <div id="jobs-list" class="flex-grow divide-y divide-slate-100"></div>
-    
-    <div class="flex gap-3">
-    <button onclick="setStatus(${job.id}, 'Interview')" 
-        class="px-5 py-1.5 rounded text-[11px] font-bold transition-colors ${job.status === 'Interview' ? 'bg-green-600 text-white' : 'btn-green-outline'}">
-        INTERVIEW
-    </button>
-    <button onclick="setStatus(${job.id}, 'Rejected')" 
-        class="px-5 py-1.5 rounded text-[11px] font-bold transition-colors ${job.status === 'Rejected' ? 'bg-red-600 text-white' : 'btn-red-outline'}">
-        REJECTED
-    </button>
-</div>
-</div>
-</div>
 </body>
 </html>

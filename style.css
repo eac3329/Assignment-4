@@ -1,3 +1,4 @@
+/* Tab Buttons */
 .tab-btn {
     padding: 6px 20px;
     font-size: 11px;
@@ -9,21 +10,42 @@
     cursor: pointer;
     text-transform: uppercase;
 }
+
 .tab-btn.active {
     background-color: #3B82F6;
     color: white;
     border-color: #3B82F6;
 }
+
 .btn-green-outline {
     border: 1px solid #22C55E;
     color: #22C55E;
     background-color: #F0FDF4;
 }
+
 .btn-red-outline {
     border: 1px solid #EF4444;
     color: #EF4444;
     background-color: #FEF2F2;
 }
 
-.delete-btn { color: #CBD5E1; transition: color 0.2s ease-in-out; }
-.delete-btn:hover { color: #EF4444; }
+
+.delete-btn {
+    color: #CBD5E1;
+    transition: color 0.2s ease-in-out;
+}
+
+.delete-btn:hover {
+    color: #EF4444;
+}
+
+.circle-container {
+    background-color: #F1F5F9;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
