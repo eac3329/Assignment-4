@@ -24,3 +24,6 @@
     color: #EF4444;
     background-color: #FEF2F2;
 }
+
+.delete-btn { color: #CBD5E1; transition: color 0.2s ease-in-out; }
+.delete-btn:hover { color: #EF4444; }
