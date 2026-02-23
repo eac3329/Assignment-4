@@ -33,6 +33,14 @@
         <h3 class="text-lg font-bold text-[#1E3A8A]">Available Jobs</h3>
         <span id="tab-job-count" class="text-slate-400 text-sm font-medium">0 jobs</span>
     </div>
+
+    <div class="px-6 py-4 flex gap-2 border-b border-slate-50 bg-slate-50/30">
+    <button onclick="handleFilterChange('All')" class="tab-btn active">All</button>
+    <button onclick="handleFilterChange('Interview')" class="tab-btn">Interview</button>
+    <button onclick="handleFilterChange('Rejected')" class="tab-btn">Rejected</button>
+</div>
+
+
     <div id="jobs-list" class="flex-grow divide-y divide-slate-100"></div>
 </div>
 </div>
