@@ -9,3 +9,21 @@ let jobsData = [
     { id: 8, company: "TechCorp Industries", role: "Senior Frontend Developer", location: "San Francisco, CA", type: "Full-time", salary: "$130k - $175k", status: "All" }
 ];
 let currentFilter = "All";
+
+function renderJobs() {
+    const listContainer = document.getElementById('jobs-list');
+    listContainer.innerHTML = "";
+
+    for (let i = 0; i < jobsData.length; i++) {
+        let job = jobsData[i];
+        const jobHTML = `
+            <div class="p-6 relative">
+                <h4 class="text-[#1E3A8A] font-bold text-xl mb-1">${job.company}</h4>
+                <p class="text-slate-700 font-semibold mb-2">${job.role}</p>
+                <p class="text-slate-400 text-sm mb-4">${job.location} • ${job.type} • ${job.salary}</p>
+            </div>
+        `;
+        listContainer.innerHTML += jobHTML;
+    }
+}
+renderJobs();
